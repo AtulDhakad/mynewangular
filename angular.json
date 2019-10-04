@@ -24,9 +24,26 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "src/style.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/web/lib/jquery/jquery-migrate.min.js",
+              "src/assets/web/lib/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/web/lib/easing/easing.min.js",
+              "src/assets/web/lib/mobile-nav/mobile-nav.js",
+              "src/assets/web/lib/wow/wow.min.js",
+              "src/assets/web/lib/waypoints/waypoints.min.js",
+              "src/assets/web/lib/counterup/counterup.min.js",
+              "src/assets/web/lib/owlcarousel/owl.carousel.min.js",
+              "src/assets/web/lib/isotope/isotope.pkgd.min.js",
+              "src/assets/web/lib/lightbox/js/lightbox.min.js",
+              "src/assets/web/contactform/contactform.js",
+              "src/assets/web/js/main.js"
+
+            ]
           },
           "configurations": {
             "production": {
@@ -89,6 +106,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -120,6 +138,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "mynewangular"
 }

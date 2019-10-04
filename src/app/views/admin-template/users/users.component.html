@@ -1,0 +1,81 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800"> Users Tables</h1>
+        <!-- <p class="mb-4">users table.</p> -->
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Users</h6>
+          </div>
+          <div>
+        </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>  
+                    <th>_id</th> 
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Address</th> 
+                    <th>Action</th>
+                 </tr>
+                </thead>
+                <tbody *ngFor="let user of returnedArray">
+                    
+                    
+                  <tr *ngIf="useredit==user._id; else elseBlock">
+                      
+             <form [formGroup]="userEditForm" (ngSubmit)="saveusers(user._id)">
+                  <td>{{user._id}}</td>
+                  <td> <input type="username"   value="{{user.username}}"  class="form-control form-control-user"  placeholder="Enter User Name Here">
+                     </td>
+                    <td>
+                    <input type="email"   value="{{user.email}}"  class="form-control form-control-user"  placeholder="Enter Email Address">
+                     </td>
+                    <td><input type="mobile"   value="{{user.mobile}}"  class="form-control form-control-user"  placeholder="Enter Mobile Number">
+                      </td>
+                    <td><input type="address"   value="{{user.address}}"  class="form-control form-control-user"  placeholder="Enter Address Here">{{user.address}} </td> 
+                    <td><a type="submit" class="btn btn-info btn-circle">
+                        <i class="dbtnc fas fa-check"></i>
+                      </a>
+                      
+                      <a   class="btn btn-danger btn-circle">
+                        <i class="dbtnc fas fa-trash"></i>
+                      </a></td>
+
+                  </form>
+                  </tr>
+
+                  <ng-template #elseBlock>
+                    <tr>
+                      <td>{{user._id}}</td>
+
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.mobile}}</td>
+                    <td>{{user.address}} </td>     
+                    <td><a (click)="editusersfun(user._id)" class="btn btn-info btn-circle">
+                        <i class="dbtnc fas fa-info-circle"></i>
+                      </a>
+                      
+                      <a (click)="deleteUser(user._id)"  class="btn btn-danger btn-circle">
+                        <i class="dbtnc fas fa-trash"></i>
+                      </a></td>
+                    </tr>
+                </ng-template>
+              
+                </tbody>
+                <pagination [totalItems]="users.length" (pageChanged)="pageChanged($event)"></pagination>   
+              </table>
+              
+            </div>
+          </div>
+        </div>
+       
+      </div>
+      <!-- /.container-fluid -->
