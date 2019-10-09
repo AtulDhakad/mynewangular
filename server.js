@@ -30,13 +30,6 @@ mongoose.connect(config.db,{ useNewUrlParser: true }).then(
 
 
 
-
-
-
-    
-
-
-
 //app.use(express.static(path.join(__dirname, 'public')));
 const ServerPortRouter = require('./api/routes/ServerPortRouter');
 
