@@ -10,6 +10,7 @@ const middleware = require('../middleware/middleware');
 const jwt = require('jsonwebtoken');
 
 router.post('/add',registerCon.addRegister);
+
 router.post('/login',registerCon.Login);
 router.get('/allusers',middleware.checkToken,registerCon.allusers);
 

@@ -30,7 +30,7 @@ returnedArray: User[] = [];
   ngOnInit(): void{
     this.userService.getAll().pipe(first()).subscribe(data => {
       this.users = data['token'];
-      console.log(this.users);
+      console.log('user data ',this.users);
      this.returnedArray = data['token'].slice(0, 10);
   });
 

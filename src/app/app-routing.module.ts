@@ -29,7 +29,8 @@ const routes: Routes = [
     //   { path: 'about', component: AboutComponent },
     //   { path: 'test/:id', component: AboutComponent }
     // ]
-},{ 
+},
+{ 
     path: 'admin',
     component: AdminLayoutComponent, 
     canActivate:[AuthGuard],
@@ -39,10 +40,8 @@ const routes: Routes = [
       { path: 'users', component: UsersComponent }
     ]
 },
-
-//no layout routes
 { path: 'admin/login', component: LoginComponent},
-{ path: 'admin/register', component: RegisterComponent },
+{ path: 'admin/register', component: RegisterComponent},
 // otherwise redirect to home
 { path: '**', redirectTo: '' }
 ];
